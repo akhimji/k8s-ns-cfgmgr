@@ -46,7 +46,7 @@ git pull https://github.com/alyarctiq/k8s-ns-cfgmgr.git /tmp/repo --recursive
 2020/04/11 14:26:08 Loading Master Files:  /tmp/master.yaml
 ```
 
-Reconsiling Namespace 
+Reconciling Namespace Objects
 ```
 # Deployments
 2020/04/11 14:21:54 Repairing Missing Deployment: emailservice
@@ -109,7 +109,7 @@ Action: Adjust yaml files in Git repo
 Outcome: Operator finds delta between cluster and repo state and reconsiles changes.
 ```
 
-Reconciles when a change is made to the repo. (eg yaml file is updated/deleted)
+Reconcilie when a change is made to the repo. (eg yaml file is updated/deleted)
 ```
 ...
 Delete Dep From Cluster: adservice
