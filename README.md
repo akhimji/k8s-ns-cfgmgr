@@ -102,7 +102,7 @@ shippingservice-849db7fbb-s5r86          0/1     ContainerCreating   0          
 
 Testing
 ```
-Action: Manually delete some repo's or services
+Action: Manually delete some deplyoment or services from cluster
 Outcome: Operator finds delta between repo and cluster state and reconsiles changes.
 
 Action: Adjust yaml files in Git repo
