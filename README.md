@@ -59,14 +59,34 @@ git pull https://github.com/alyarctiq/k8s-ns-cfgmgr.git /tmp/repo --recursive
 
 Reconsiling Namespace 
 ```
-2020/04/11 14:26:08 Repairing Missing Deployment: emailservice
+2020/04/11 14:21:54 Repairing Missing Deployment: emailservice
 Created deployment "emailservice".
-2020/04/11 14:26:08 Repairing Missing Deployment: checkoutservice
+2020/04/11 14:21:54 Repairing Missing Deployment: checkoutservice
 Created deployment "checkoutservice".
-2020/04/11 14:26:08 Repairing Missing Deployment: recommendationservice
+2020/04/11 14:21:55 Repairing Missing Deployment: recommendationservice
 Created deployment "recommendationservice".
-2020/04/11 14:26:09 Repairing Missing Deployment: frontend
+2020/04/11 14:21:55 Repairing Missing Deployment: frontend
 Created deployment "frontend".
+2020/04/11 14:21:55 Repairing Missing Deployment: paymentservice
+Created deployment "paymentservice".
+2020/04/11 14:21:55 Repairing Missing Deployment: productcatalogservice
+Created deployment "productcatalogservice".
+2020/04/11 14:21:55 Repairing Missing Deployment: cartservice
+Created deployment "cartservice".
+2020/04/11 14:21:55 Repairing Missing Deployment: loadgenerator
+Created deployment "loadgenerator".
+2020/04/11 14:21:55 Repairing Missing Deployment: currencyservice
+Created deployment "currencyservice".
+2020/04/11 14:21:55 Repairing Missing Deployment: shippingservice
+Created deployment "shippingservice".
+2020/04/11 14:21:56 Repairing Missing Deployment: redis-cart
+Created deployment "redis-cart".
+2020/04/11 14:21:56 Repairing Missing Deployment: adservice
+Created deployment "adservice".
+2020/04/11 14:21:56 Repairing Missing Service: emailservice
+Created Service "emailservice".
+2020/04/11 14:21:57 Repairing Missing Service: checkoutservice
+Created Service "checkoutservice".
 .....
 
 $ kubectl get pods -n hipster
