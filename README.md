@@ -83,20 +83,20 @@ Created Service "paymentservice".
 .....
 
 $ kubectl get pods -n hipster
-NAME                                     READY   STATUS              RESTARTS   AGE
-adservice-5897f58b66-wgq74               0/1     Pending             0          2s
-cartservice-5d679b9449-z75s4             0/1     ContainerCreating   0          4s
-checkoutservice-6f56ff8674-9cjrd         0/1     ContainerCreating   0          4s
-currencyservice-f58f7f5d4-gvxsh          0/1     ContainerCreating   0          3s
-emailservice-d66dc8fbb-mt4tn             0/1     ContainerCreating   0          4s
-frontend-5bd68756d4-h4gwn                0/1     ContainerCreating   0          4s
-k8s-ns-cfgmgr-jbhjh                      1/1     Running             0          12s
-loadgenerator-6655f746fb-jc744           0/1     ContainerCreating   0          4s
-paymentservice-794c8b9ccd-n6dnm          0/1     ContainerCreating   0          4s
-productcatalogservice-6446f67666-29989   0/1     ContainerCreating   0          4s
-recommendationservice-654cb4cdb4-fz68x   0/1     ContainerCreating   0          4s
-redis-cart-65bf66b8fd-wmh47              0/1     ContainerCreating   0          2s
-shippingservice-849db7fbb-s5r86          0/1     ContainerCreating   0          3s
+NAME                                     READY   STATUS    RESTARTS   AGE
+adservice-5897f58b66-4brv2               0/1     Running   0          50s
+cartservice-5d679b9449-c6w49             1/1     Running   0          52s
+checkoutservice-6f56ff8674-skptd         1/1     Running   0          53s
+currencyservice-f58f7f5d4-vl4nv          1/1     Running   0          52s
+emailservice-d66dc8fbb-4gkzw             0/1     Running   2          53s
+frontend-5bd68756d4-x72p6                1/1     Running   0          53s
+k8s-ns-cfgmgr-jl589                      1/1     Running   0          91s
+loadgenerator-6655f746fb-rnq8g           1/1     Running   0          52s
+paymentservice-794c8b9ccd-5tdh9          1/1     Running   0          53s
+productcatalogservice-6446f67666-zlb76   1/1     Running   0          53s
+recommendationservice-654cb4cdb4-b86qg   0/1     Running   1          53s
+redis-cart-65bf66b8fd-8b7x6              1/1     Running   0          51s
+shippingservice-849db7fbb-x8lv4          1/1     Running   0          51s
 ```
 
 
