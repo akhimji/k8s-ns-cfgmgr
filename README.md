@@ -59,6 +59,7 @@ git pull https://github.com/alyarctiq/k8s-ns-cfgmgr.git /tmp/repo --recursive
 
 Reconsiling Namespace 
 ```
+# Deployments
 2020/04/11 14:21:54 Repairing Missing Deployment: emailservice
 Created deployment "emailservice".
 2020/04/11 14:21:54 Repairing Missing Deployment: checkoutservice
@@ -75,18 +76,21 @@ Created deployment "productcatalogservice".
 Created deployment "cartservice".
 2020/04/11 14:21:55 Repairing Missing Deployment: loadgenerator
 Created deployment "loadgenerator".
-2020/04/11 14:21:55 Repairing Missing Deployment: currencyservice
-Created deployment "currencyservice".
-2020/04/11 14:21:55 Repairing Missing Deployment: shippingservice
-Created deployment "shippingservice".
-2020/04/11 14:21:56 Repairing Missing Deployment: redis-cart
-Created deployment "redis-cart".
-2020/04/11 14:21:56 Repairing Missing Deployment: adservice
-Created deployment "adservice".
+....
+
+# Services
 2020/04/11 14:21:56 Repairing Missing Service: emailservice
 Created Service "emailservice".
 2020/04/11 14:21:57 Repairing Missing Service: checkoutservice
 Created Service "checkoutservice".
+2020/04/11 14:21:58 Repairing Missing Service: recommendationservice
+Created Service "recommendationservice".
+2020/04/11 14:21:59 Repairing Missing Service: frontend
+Created Service "frontend".
+2020/04/11 14:22:00 Repairing Missing Service: frontend-external
+Created Service "frontend-external".
+2020/04/11 14:22:00 Repairing Missing Service: paymentservice
+Created Service "paymentservice".
 .....
 
 $ kubectl get pods -n hipster
