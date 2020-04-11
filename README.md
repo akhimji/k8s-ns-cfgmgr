@@ -1,4 +1,4 @@
-# k8s-cfgmgr
+# k8s-ns-cfgmgr
 Simple (non informer) based operator to poll git repo for yaml files of Kind (Deployment and Service) and maintain state in a namespace. 
 
 
@@ -97,6 +97,16 @@ productcatalogservice-6446f67666-29989   0/1     ContainerCreating   0          
 recommendationservice-654cb4cdb4-fz68x   0/1     ContainerCreating   0          4s
 redis-cart-65bf66b8fd-wmh47              0/1     ContainerCreating   0          2s
 shippingservice-849db7fbb-s5r86          0/1     ContainerCreating   0          3s
+```
+
+
+Testing
+```
+Action: Manually delete some repo's or services
+Outcome: Operator finds delta between repo and cluster state and reconsiles changes.
+
+Action: Adjust yaml files in Git repo
+Outcome: Operator finds delta between cluster and repo state and reconsiles changes.
 ```
 
 Reconciles when a change is made to the repo. (eg yaml file is updated/deleted)
