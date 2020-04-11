@@ -140,11 +140,12 @@ edit go-op-rc.yaml
           - name: URL
             value: "https://github.com/alyarctiq/k8s-ns-cfgmgr.git"
             
-            # Folder where yaml files are localted ("/path"). If in root use "."
+            # Folder where yaml files are located ("/path"). If in root use "."
           - name: FOLDER
             value: "/yamls"
             
-            # Namespace to deploy into. Usually the same as operator. If you require seperates operator and app namespaces, see deploy folder for more rbac and repliction deployment examples. 
+            # Namespace to deploy into. Usually the same as operator. 
+            # If you require seperates operator and app namespaces, see deploy folder for more rbac and repliction deployment examples. 
           - name: NAMESPACE
             value: "hipster"    
 
