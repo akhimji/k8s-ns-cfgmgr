@@ -15,8 +15,8 @@ spec:
           imagePullPolicy: Always
           env:
           - name: URL
-            value: "https://github.com/alyarctiq/go-git.git"
+            value: "https://github.com/alyarctiq/k8s-ns-cfgmgr.git"
           - name: FOLDER
-            value: "."
+            value: "/yamls"
           - name: NAMESPACE
             value: "hipster2"            

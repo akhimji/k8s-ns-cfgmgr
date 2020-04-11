@@ -371,26 +371,42 @@ func deleteSvc(clientset *kubernetes.Clientset, svcname string, ns string) {
 }
 
 func main() {
-
-	var namespace string
-	namespace = os.Getenv("NAMESPACE")
-	log.Println("OS ENV NS: ", namespace)
-	//namespace = "hipster-cli"
-	var url string
-	var directory string
+	// Clean Up
 	master := "/tmp/master.yaml"
 	_, err := os.Stat(master)
 	if os.IsNotExist(err) {
 		os.Remove(master)
 	}
 
-	//url = "https://github.com/alyarctiq/go-git"
-	//url = "https://github.com/GoogleCloudPlatform/microservices-demo.git"
+	var namespace string
+	namespace = os.Getenv("NAMESPACE")
+	log.Println("OS ENV NS: ", namespace)
+	var url string
+	var directory string
+	var basefolder string
+	var folder string
+	var path string
+
+	basefolder = "/tmp/repo"
 	url = os.Getenv("URL")
 	directory = "/tmp/repo"
 	log.Println("OS ENV URL: ", url)
 	log.Println("Cloning Git Repo")
 	gitClone(url, directory)
+
+	folder = os.Getenv("FOLDER")
+	if folder == "." {
+		path = basefolder
+	} else {
+		path = basefolder + folder
+	}
+	_, err = os.Stat(path)
+	if os.IsNotExist(err) {
+		log.Println("Path Not Found:", path)
+		os.Exit(1)
+	} else {
+		log.Println("Search Path: Found", path)
+	}
 
 	clientset, _ := buildClient()
 
@@ -398,7 +414,7 @@ func main() {
 
 	log.Println("Starting Watch Loop...")
 	for {
-		log.Println("Repeat Loop...")
+		//log.Println("Repeat Loop...")
 		var yamlDeployments []string
 		var yamlServices []string
 		var currentDeployments []string
@@ -407,7 +423,7 @@ func main() {
 		var err error
 		//var alldata []byte
 
-		files, _ := walkMatch("/tmp/repo/", "*.yaml")
+		files, _ := walkMatch(path, "*.yaml")
 
 		for _, name := range files {
 			log.Println("Loading Yaml Files:", name)
