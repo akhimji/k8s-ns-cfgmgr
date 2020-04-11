@@ -32,15 +32,6 @@ func gitClone(url string, directory string) {
 	})
 
 	CheckIfError(err)
-
-	// ... retrieving the branch being pointed by HEAD
-	//ref, err := r.Head()
-	//CheckIfError(err)
-	// ... retrieving the commit object
-	//commit, err := r.CommitObject(ref.Hash())
-	//CheckIfError(err)
-
-	//fmt.Println(commit)
 }
 
 func gitPull(path string) {
@@ -57,13 +48,6 @@ func gitPull(path string) {
 	_ = w.Pull(&git.PullOptions{RemoteName: "origin"})
 	// CheckIfError(err)
 
-	// Print the latest commit that was just pulled
-	//ref, err := r.Head()
-	//CheckIfError(err)
-	//commit, err := r.CommitObject(ref.Hash())
-	//CheckIfError(err)
-
-	//fmt.Println(commit)
 }
 
 func deleteDeployment(clientset *kubernetes.Clientset, deployment string, ns string) {
