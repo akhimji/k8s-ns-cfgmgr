@@ -103,10 +103,10 @@ shippingservice-849db7fbb-x8lv4          1/1     Running   0          51s
 Testing
 ```
 Action: Manually delete some deplyoment or services from cluster
-Outcome: Operator finds delta between repo and cluster state and reconsiles changes.
+Outcome: Operator finds delta between repo and cluster state and reconcilies changes.
 
 Action: Adjust yaml files in Git repo
-Outcome: Operator finds delta between cluster and repo state and reconsiles changes.
+Outcome: Operator finds delta between cluster and repo state and reconcilies changes.
 ```
 
 Reconcilie when a change is made to the repo. (eg yaml file is updated/deleted)
