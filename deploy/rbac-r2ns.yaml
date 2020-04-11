@@ -1,14 +1,8 @@
-apiVersion: v1
-kind: ServiceAccount
-metadata:
- name: k8s-ns-cfgmgr
- namespace: hipster
----
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
   name: k8s-ns-cfgmgr
-  namespace: hipster # Should be namespace you are granting access to
+  namespace: hipster2 # Should be namespace you are granting access to
 rules:
 - apiGroups: ["*"]
   resources: ["*"]
@@ -18,7 +12,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   name: k8s-ns-cfgmgr
-  namespace: hipster # Should be namespace you are granting access to
+  namespace: hipster2 # Should be namespace you are granting access to
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
