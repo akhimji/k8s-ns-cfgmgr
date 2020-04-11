@@ -6,10 +6,9 @@ Usage:
 ```
 git clone repo
 cd deploy/
-
 edit go-op-rc.yaml
 
-edit ENV var
+# edit ENV var
 
           env:
           - name: URL
@@ -21,27 +20,30 @@ edit ENV var
 
 (leave the same for testing)
 
+# Create Namesapce
 $ kubectl create ns hipster
 namespace/hipster created
 
+# Apply RBAC
 $ kubectl apply -f rbac-r.yaml -n hipster
 serviceaccount/k8s-ns-cfgmgr created
 role.rbac.authorization.k8s.io/k8s-ns-cfgmgr created
 rolebinding.rbac.authorization.k8s.io/k8s-ns-cfgmgr created
 
+# Deploy Op
 $ kubectl apply -f go-op-rc.yaml  -n hipster
 replicationcontroller/k8s-ns-cfgmgr created
 
 $ kubectl get pods -n hipster
 NAME                  READY   STATUS              RESTARTS   AGE
 k8s-ns-cfgmgr-ppcfk   0/1     ContainerCreating   0          3s
-
 ```
 
 Validate
-
 ```
+# Tail Logs
 $ kubectl logs -f k8s-ns-cfgmgr-8vvkc  -n hipster
+
 2020/04/11 14:26:07 OS ENV NS:  hipster
 2020/04/11 14:26:07 OS ENV URL:  https://github.com/alyarctiq/k8s-ns-cfgmgr.git
 2020/04/11 14:26:07 Cloning Git Repo
@@ -55,7 +57,7 @@ git pull https://github.com/alyarctiq/k8s-ns-cfgmgr.git /tmp/repo --recursive
 2020/04/11 14:26:08 Loading Master Files:  /tmp/master.yaml
 ```
 
-Reconsile namespace 
+Reconsiling Namespace 
 ```
 2020/04/11 14:26:08 Repairing Missing Deployment: emailservice
 Created deployment "emailservice".
