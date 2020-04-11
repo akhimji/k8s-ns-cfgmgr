@@ -133,11 +133,6 @@ func main() {
 		repairDep := cmd.SliceDiff(yamlDeployments, currentDeployments)
 		repairSvc := cmd.SliceDiff(yamlServices, currentServices)
 
-		// alpha := []string{"apples", "oranges", "pears", "plumbs"}
-		// //beta := []string{"apples", "oranges", "pears"}
-		// log.Println("here....", sliceDiff(alpha, yamlDeployments))
-		// time.Sleep(10 * time.Second)
-
 		//log.Println("Dep Delta:", repairDep)
 		//log.Println("Svc Delta:", repairSvc)
 
