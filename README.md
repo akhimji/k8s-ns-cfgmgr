@@ -4,21 +4,10 @@ Simple (non informer) based operator to poll git repo for yaml files of Kind (De
 
 Usage:
 ```
+-- demo with hipster store appl -- 
+
 git clone repo
 cd deploy/
-edit go-op-rc.yaml
-
-# edit ENV var
-
-          env:
-          - name: URL
-            value: "https://github.com/alyarctiq/k8s-ns-cfgmgr.git"
-          - name: FOLDER
-            value: "/yamls"
-          - name: NAMESPACE
-            value: "hipster"    
-
-(leave the same for testing)
 
 # Create Namesapce
 $ kubectl create ns hipster
@@ -137,4 +126,60 @@ Deleting Svc: shippingservice
 Delete Svc From Cluster: shippingservice
 ```
 
+
+Customize
+```
+git clone repo
+cd deploy/
+
+edit go-op-rc.yaml
+
+# edit ENV var
+          env:
+            # URL of your repo here (Public repo only for now)
+          - name: URL
+            value: "https://github.com/alyarctiq/k8s-ns-cfgmgr.git"
+            
+            # Folder where yaml files are localted ("/path"). If in root use "."
+          - name: FOLDER
+            value: "/yamls"
+            
+            # Namespace to deploy into. Usually the same as operator. If you require seperates operator and app namespaces, see deploy folder for more rbac and repliction deployment examples. 
+          - name: NAMESPACE
+            value: "hipster"    
+
+# Create Namesapce
+$ kubectl create ns <namespace>
+
+
+# Apply RBAC
+$ kubectl apply -f rbac-r.yaml -n <namespace>
+serviceaccount/k8s-ns-cfgmgr created
+role.rbac.authorization.k8s.io/k8s-ns-cfgmgr created
+rolebinding.rbac.authorization.k8s.io/k8s-ns-cfgmgr created
+
+# Deploy Op
+$ kubectl apply -f go-op-rc.yaml  -n <namespace>
+replicationcontroller/k8s-ns-cfgmgr created     
+      
+```
+
+Clean Up
+```
+Delete namespace
+
+$ kubectl delete ns hipster
+```
+
+Build
+```
+git clone repo
+go mod tidy
+code
+go build
+adjust Dockerfile
+adjust replication yaml
+
+enjoy
+```
 
